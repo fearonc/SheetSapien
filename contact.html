@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SheetSapien — Contact</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Contact SheetSapien — get a quote for Excel automation." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">SheetSapien</a>
+        <span class="tagline">Empowering Efficiency Through Excel Automation</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link" data-link>Home</a>
+        <a href="about.html" class="nav-link" data-link>About</a>
+        <a href="testimonials.html" class="nav-link" data-link>Testimonials</a>
+        <a href="contact.html" class="nav-link contact-cta" data-link>Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="main-content" class="page contact-page container">
+    <section class="contact-intro">
+      <h1>Contact Us</h1>
+      <p class="lead">Describe what you need — a short message is fine. We’ll get back with a recommended approach and estimate.</p>
+    </section>
+
+    <section class="contact-form-section">
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name" />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-row">
+          <label for="company">Company (optional)</label>
+          <input id="company" name="company" type="text" placeholder="Company name" />
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Tell us about your use case"></textarea>
+        </div>
+
+        <div class="form-row form-actions">
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <div id="form-msg" class="form-msg" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+    <section class="contact-info">
+      <h3>Alternate contact</h3>
+      <p>Email: <a href="mailto:hello@sheetsapien.example">hello@sheetsapien.example</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> SheetSapien — Built for Excel efficiency</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
