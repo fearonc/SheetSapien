@@ -1,0 +1,246 @@
+/* style.css - SheetSapien
+   Modern corporate, responsive, Excel-green palette. */
+
+/* Color palette */
+:root{
+  --green-900: #154c36;
+  --green-700: #217346; /* primary */
+  --green-500: #3ba16e;
+  --slate-900: #0b1220;
+  --muted: #6b7280;
+  --bg: #fbfcfd;
+  --card-bg: #ffffff;
+  --glass: rgba(255,255,255,0.6);
+  --max-width: 1100px;
+  --radius: 12px;
+  --transition-fast: 260ms;
+  --transition-medium: 420ms;
+}
+
+/* Reset-ish */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--slate-900);
+  background:linear-gradient(180deg,#fbfdfb 0%, #f7fbf7 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* layout container */
+.container{
+  width:calc(100% - 32px);
+  max-width:var(--max-width);
+  margin-left:auto;
+  margin-right:auto;
+  padding:28px 0;
+}
+
+/* header */
+.site-header{
+  background:linear-gradient(90deg, rgba(33,115,70,0.06), rgba(33,115,70,0.02));
+  border-bottom:1px solid rgba(15,23,42,0.04);
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(6px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  font-weight:700;
+  color:var(--green-900);
+  text-decoration:none;
+  font-size:1.15rem;
+}
+.tagline{
+  font-size:0.9rem;
+  color:var(--muted);
+}
+
+/* nav */
+.site-nav{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.site-nav .nav-link{
+  text-decoration:none;
+  color:var(--slate-900);
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:0.95rem;
+  transition:all var(--transition-fast) ease;
+}
+.site-nav .nav-link:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(13, 71, 41, 0.06);}
+.site-nav .nav-link.active{
+  background:linear-gradient(90deg,var(--green-700),var(--green-500));
+  color:white;
+  box-shadow:0 6px 22px rgba(33,115,70,0.12);
+}
+.contact-cta{
+  border:1px solid rgba(33,115,70,0.12);
+  padding:8px 14px;
+  border-radius:10px;
+}
+
+/* mobile nav toggle */
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:none;
+  font-size:1.1rem;
+}
+
+/* hero */
+.hero{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  justify-content:space-between;
+  padding:32px 0;
+}
+.hero-inner{max-width:640px}
+.hero h1{font-size:2rem;margin:0 0 8px}
+.lead{color:var(--muted);font-size:1.05rem}
+.hero-visual{min-width:240px;display:flex;align-items:center;justify-content:center}
+.card{
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 8px 30px rgba(13,18,24,0.06);
+  width:220px;
+}
+.card-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed rgba(15,23,42,0.04)}
+.card-row:last-child{border-bottom:none}
+
+/* services grid */
+.services h2, .testimonials-intro h1, .about-intro h1{margin-top:0}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:18px;
+}
+.service-card{
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(13,18,24,0.04);
+}
+
+/* CTA */
+.cta{
+  margin-top:28px;
+  padding:28px;
+  background:linear-gradient(90deg, rgba(33,115,70,0.06), rgba(33,115,70,0.02));
+  border-radius:12px;
+}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.cta-inner h2{margin:0}
+
+/* testimonials */
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:18px;
+}
+.testimonial{
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(13,18,24,0.04);
+  font-style:italic;
+}
+
+/* contact form */
+.contact-form{
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(13,18,24,0.04);
+  max-width:760px;
+}
+.form-row{margin-bottom:12px;display:flex;flex-direction:column}
+.form-row label{font-weight:600;margin-bottom:6px}
+.form-row input, .form-row textarea{
+  border:1px solid #e6eef0;
+  padding:10px 12px;
+  border-radius:8px;
+  font-size:0.95rem;
+}
+.form-actions{display:flex;gap:12px;align-items:center}
+.form-msg{color:var(--muted);font-size:0.95rem}
+
+/* buttons */
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  cursor:pointer;
+  border:0;
+}
+.btn-primary{
+  background:linear-gradient(90deg,var(--green-700),var(--green-500));
+  color:white;
+  box-shadow:0 10px 28px rgba(33,115,70,0.12);
+}
+.btn-outline{
+  background:transparent;
+  color:var(--green-700);
+  border:1px solid rgba(33,115,70,0.12);
+}
+
+/* footer */
+.site-footer{padding:18px 0;color:var(--muted);border-top:1px solid rgba(15,23,42,0.04);margin-top:28px}
+
+/* small screens */
+@media (max-width:900px){
+  .hero{flex-direction:column;align-items:flex-start}
+  .grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .cta-inner{flex-direction:column;align-items:flex-start}
+  .nav-toggle{display:inline-block}
+  .site-nav{position:fixed;top:64px;right:12px;background:white;padding:12px;border-radius:10px;box-shadow:0 12px 30px rgba(13,18,24,0.08);display:none;flex-direction:column}
+  .site-nav.open{display:flex}
+}
+
+/* page slide animation helpers */
+.view-wrapper{position:relative;overflow:hidden}
+.view{
+  min-height:calc(100vh - 170px);
+  transition:transform var(--transition-medium) cubic-bezier(.2,.9,.2,1);
+  position:relative;
+  width:100%;
+  background:transparent;
+}
+.view.to-left{transform:translateX(-100%)}
+.view.to-right{transform:translateX(100%)}
+.view.enter-from-right{transform:translateX(100%)}
+.view.enter-from-left{transform:translateX(-100%)}
+.view.enter-active{transform:translateX(0)}
+
+/* utility */
+ol{padding-left:18px}
+h1,h2,h3{color:var(--slate-900)}
+.lead{margin-bottom:12px}
+
+/* smaller screens adjustments */
+@media (max-width:520px){
+  .logo{font-size:1rem}
+  .hero h1{font-size:1.5rem}
+  .brand .tagline{display:none}
+  .container{width:calc(100% - 20px)}
+}
