@@ -193,9 +193,16 @@
     document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());
 
     // nav links
-    document.querySelectorAll(navSelector).forEach(a => {
-      a.addEventListener('click', handleLinkClick);
-    });
+ //   document.querySelectorAll(navSelector).forEach(a => {
+ //     a.addEventListener('click', handleLinkClick);
+ //   });
+
+
+     // nav links — disable SPA transition for now
+document.querySelectorAll(navSelector).forEach(a => {
+  a.removeEventListener('click', handleLinkClick);
+});
+
 
     // active nav
     updateActiveNav(location.pathname);
